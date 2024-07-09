@@ -133,10 +133,10 @@ class HomeMob extends StatelessWidget {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(
-                            horizontal: 25.0,
-                            vertical: 20.0,
+                            horizontal: 12.0,
+                            vertical: 8.0,
                           ),
-                          textStyle: const TextStyle(fontSize: 15),
+                          textStyle: const TextStyle(fontSize: 10),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0), // Border radius for rectangular curve
                             side: const BorderSide(

@@ -47,20 +47,28 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
 
-
-              //MAIN HOME PAGE
-              if (isDesktop)
+              // MAIN HOME PAGE
+              if(isDesktop)
                 const HomeDesk()
               else
                 const HomeMob(),
-
-
 
               // Conflict resolution Page
               Container(
                 height: 500,
                 width: double.maxFinite,
                 color: Colors.blueGrey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height:screenSize.height*0.5,
+                      width:screenSize.width*0.7,
+                      
+
+                    ),
+                  ],
+                ),
               ),
 
               // Community service Page
@@ -83,6 +91,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-        
-        
-    
