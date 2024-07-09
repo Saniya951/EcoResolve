@@ -47,6 +47,7 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(
       builder: (context, constraints) {
         bool isDesktop = constraints.maxWidth >= minDesktopWidth;
+        final screenSize=MediaQuery.of(context).size;
 
         return Scaffold(
           key: scaffoldKey,
@@ -71,49 +72,53 @@ class _HomePageState extends State<HomePage> {
                 ),
 
               Container(
-                padding: const EdgeInsets.all(30.0),
-                child: Row(
+                margin:const EdgeInsets.symmetric(horizontal: 20.0),
+                constraints:BoxConstraints(maxHeight:screenSize.height*0.45),
+                child:Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Expanded(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Welcome to our Community Service and Social Responsibility Platform",
-                            style: isDesktop ? desktopTitleStyle : mobileTitleStyle,
-                          ),
-                          const SizedBox(height: 8.0),
-                          SizedBox(
-                            width: isDesktop? 800.0 : 400.0,
-                            child: Text(
-                              "We are dedicated to promoting social responsibility and community engagement. Our platform connects volunteers, organizations, and community members who share a passion for making a positive impact. Together, we can create meaningful change and build a stronger, more compassionate community.",
-                              style: isDesktop ? desktopBodyStyle : mobileBodyStyle,
-                              maxLines: 8,  // Conditionally set maxLines
-                              // overflow: TextOverflow.ellipsis,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Welcome to our Community Service and Social Responsibility Platform",
+                              style: isDesktop ? desktopTitleStyle : mobileTitleStyle,
                             ),
-                          ),
-
-                          const SizedBox(height: 16.0), //for space
-
-                          // import custom btn form constants
-                          CustomButton(
-                            text: "Community Service",
-                            onPressed: () {},
-                            constraints: constraints,
-                          ),
-                           
-                        ],
-                      ),
+                            const SizedBox(height: 8.0),
+                            SizedBox(
+                              width: isDesktop? 600.0 : null,
+                              child: Text(
+                                "We are dedicated to promoting social responsibility and community engagement. Our platform connects volunteers, organizations, and community members who share a passion for making a positive impact. Together, we can create meaningful change and build a stronger, more compassionate community.",
+                                style: isDesktop ? desktopBodyStyle : mobileBodyStyle,
+                                maxLines: 8,  // Conditionally set maxLines
+                                // overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                      
+                            const SizedBox(height: 8.0), //for space
+                      
+                            // import custom btn form constants
+                            CustomButton(
+                              text: "Community Service",
+                              onPressed: () {},
+                              constraints: constraints,
+                            ),
+                             
+                          ],
+                        ),
                     ),
-                    const SizedBox(height: 16.0), 
+                    
+                    const SizedBox(height: 8.0), 
+                    
                     Padding(
                       padding: isDesktop? const EdgeInsets.only(right:80.0):const EdgeInsets.only(right:5.0),
                       child: Image.asset(
-                        "assets/images/EcoResolve-logo.png",
-                        width: isDesktop ? 200.0 : 100.0, // Adjust the width
-                        height: isDesktop ? 200.0 : 100.0, ),
+                          "assets/images/EcoResolve-logo.png",
+                          width: isDesktop ? 200.0 : 100.0, // Adjust the width
+                          height: isDesktop ? 200.0 : 100.0, ),
                     ),
-                    SizedBox(height: isDesktop ? 100.0 : 16.0),
                   
                   ],
                 ),
@@ -121,10 +126,12 @@ class _HomePageState extends State<HomePage> {
 
 
               Container(
-                padding: const EdgeInsets.all(30.0),
+                margin:const EdgeInsets.symmetric(horizontal: 20.0),
+                constraints:BoxConstraints(maxHeight:screenSize.height*0.45),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(height: isDesktop ? 100.0 : 16.0),
+                    // SizedBox(height: isDesktop ? 100.0 : 16.0),
                     
                     Padding(
                       padding: isDesktop? const EdgeInsets.only(left:80.0):const EdgeInsets.only(left:5.0),
@@ -140,6 +147,7 @@ class _HomePageState extends State<HomePage> {
 
                     Expanded(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
@@ -149,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           const SizedBox(height: 8.0),
                           SizedBox(
-                            width: isDesktop? 800.0 : 400.0,
+                            width: isDesktop? 800.0 : null,
                             child: Text(
                               "We are dedicated to promoting social responsibility and community engagement. Our platform connects volunteers, organizations, and community members who share a passion for making a positive impact. Together, we can create meaningful change and build a stronger, more compassionate community.",
                               style: isDesktop ? desktopBodyStyle : mobileBodyStyle,
@@ -159,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
 
-                          const SizedBox(height: 16.0), //for space
+                          const SizedBox(height: 8.0), //for space
 
                           // import custom btn form constants
                           CustomButton(
