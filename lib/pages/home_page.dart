@@ -1,5 +1,6 @@
 import 'package:eco_resolve/constants/colors.dart';
 import 'package:eco_resolve/constants/size.dart';
+import 'package:eco_resolve/widgets/conf_chatscreen_web.dart';
 import 'package:eco_resolve/widgets/drawer_mob.dart';
 import 'package:eco_resolve/widgets/header.dart';
 import 'package:eco_resolve/widgets/header_mob.dart';
@@ -23,7 +24,6 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(
       builder: (context, constraints) {
         bool isDesktop = constraints.maxWidth >= minDesktopWidth;
-        final screenSize=MediaQuery.of(context).size;
 
         return Scaffold(
           key: scaffoldKey,
@@ -54,22 +54,10 @@ class _HomePageState extends State<HomePage> {
                 const HomeMob(),
 
               // Conflict resolution Page
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height:screenSize.height*0.5,
-                      width:screenSize.width*0.7,
-                      
-
-                    ),
-                  ],
-                ),
-              ),
+              if(isDesktop)
+                const ConfChatScreenWeb()
+              else
+                const ConfChatScreenWeb(),
 
               // Community service Page
               Container(

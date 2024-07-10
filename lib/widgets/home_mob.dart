@@ -8,6 +8,7 @@ class HomeMob extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Container(
+      color: CustomColor.bgLight,
       child: Column(
         children: [
           Container(

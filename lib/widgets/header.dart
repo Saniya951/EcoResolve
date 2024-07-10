@@ -10,7 +10,8 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
             height:60,
-            margin:const EdgeInsets.symmetric(vertical: 10.0, horizontal:20.0 ),
+            padding: const EdgeInsets.only(top:12,bottom:12,left:20),
+            // margin:const EdgeInsets.symmetric(vertical: 10.0, horizontal:20.0 ),
             decoration:headerDecoration,
             child:Row(
               children:[

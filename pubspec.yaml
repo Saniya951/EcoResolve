@@ -31,6 +31,27 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # for hive database
+  # hive: ^4.0.0-dev.2
+  hive : ^2.0.4
+  hive_flutter: ^1.1.0
+  isar_flutter_libs: ^4.0.0-dev.13
+
+  # for accessing storage path
+  path_provider: ^2.1.0
+
+  # state manager nd navigation manager
+  get: ^4.6.6
+
+  # For Custom Animations
+  flutter_animate: ^4.5.0
+
+  # for API call
+  http: ^1.2.1
+
+  # animation for text writing
+  typewrite_text: ^0.0.2
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
