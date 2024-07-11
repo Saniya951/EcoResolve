@@ -1,5 +1,6 @@
 import 'package:eco_resolve/constants/colors.dart';
 import 'package:eco_resolve/constants/size.dart';
+import 'package:eco_resolve/widgets/com_chatscreen.dart';
 import 'package:eco_resolve/widgets/conf_chatscreen_web.dart';
 import 'package:eco_resolve/widgets/drawer_mob.dart';
 import 'package:eco_resolve/widgets/header.dart';
@@ -60,11 +61,10 @@ class _HomePageState extends State<HomePage> {
                 const ConfChatScreenWeb(),
 
               // Community service Page
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
-              ),
+              if(isDesktop)
+                const ComChatScreen()
+              else
+                const ComChatScreen(),
 
               // Feedback Page
               Container(
